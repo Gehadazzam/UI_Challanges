@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+button{
+    padding-block: 0.7rem;
+    padding-right: 2rem;
+    padding-left: 2.3rem;
+    border: none;
+    border-radius: 99px;
+  background-color: black;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    position: relative;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+button::before{
+    content: '';
+    position: absolute;
+    top: 1rem;
+    left: 0.9rem;
+    width: 0.6rem;
+    height: 0.6rem;
+    background-color: hsl(0, 100%, 99%);
+    border-radius: 99px;
+    z-index: 10;
+    transition: transform 0.2s ease;
+}
+
+button:hover::before{
+    transform: scale(1.9);
+}
+button:hover{
+    background-color: hsl(0, 100%, 99%);
+    color: black;
+    padding-left: 2rem;
+    padding-right: 2.3rem;
+}
+button:hover span {
+    animation: move 0.4s ease forwards;
+}
+
+button::after{
+    content: '';
+    position: absolute;
+    top: 0.9rem;
+    right: 0.9rem;
+    width: 0.6rem;
+    height: 0.6rem;
+    background-color: hsl(0, 0%, 0%);
+    border-radius: 99px;
+    z-index: 10;
+    transition: transform 0.2s ease;
+    display: none;
+}
+button:hover::after {
+    display: block;
+    animation: move 0.4s ease forwards;
+}
+@keyframes move {
+    0% {
+        transform: translateX(0.5rem);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
